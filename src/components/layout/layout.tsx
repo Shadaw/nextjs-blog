@@ -1,5 +1,6 @@
 import type React from "react";
 import { Header } from "../header";
+import { Footer } from "../footer";
 
 type LayoutProps = {
   children: React.ReactNode
@@ -13,6 +14,8 @@ export function Layout({ children }: LayoutProps) {
       <main className="flex-1 flex flex-col mb-12">
         {children}
       </main>
+
+      <Footer />
     </div>
   )
 }
