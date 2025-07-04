@@ -1,7 +1,8 @@
 import { PT_Sans_Caption } from "next/font/google"
-import { Button } from "../ui/button"
 import { ArrowRight, Store } from "lucide-react"
 import Link from "next/link"
+
+import { Button } from "@/components/ui/button"
 
 const ptSansCaption = PT_Sans_Caption({
   subsets: ['latin'],
