@@ -57,10 +57,10 @@ export function CustomerStorySection() {
                 </div>
 
                 <div className="flex flex-col">
-                  <strong className="text-gray-200 text-sm">
+                  <strong className="text-sm text-gray-200">
                     {customerStory.author.name}
                   </strong>
-                  <span className="text-gray-300 text-xs">
+                  <span className="text-xs text-gray-300">
                     {customerStory.author.role}
                   </span>
                 </div>

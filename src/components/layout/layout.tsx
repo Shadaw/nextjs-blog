@@ -27,7 +27,7 @@ export function Layout({ children }: LayoutProps) {
     >
       <Header />
 
-      <main className="flex-1 flex flex-col mt-10">{children}</main>
+      <main className="mt-10 flex flex-1 flex-col">{children}</main>
 
       <Footer />
     </div>

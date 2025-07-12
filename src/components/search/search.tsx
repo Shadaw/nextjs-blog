@@ -36,10 +36,10 @@ export function Search() {
   }
 
   return (
-    <form onSubmit={handleSearch} className="relative group w-full md:w-60">
+    <form onSubmit={handleSearch} className="group relative w-full md:w-60">
       <SearchIcon
         className={cn(
-          'absolute text-gray-300 left-3 top-1/2 size-4 -translate-y-1/2 transition-colors duration-200 group-focus-within:text-blue-300',
+          'absolute left-3 top-1/2 size-4 -translate-y-1/2 text-gray-300 transition-colors duration-200 group-focus-within:text-blue-300',
           query ? 'text-blue-300' : '',
         )}
       />
@@ -48,11 +48,11 @@ export function Search() {
         placeholder="Buscar"
         value={query}
         onChange={handleQueryChange}
-        className="w-full h-10 md:w-60 bg-transparent border border-gray-400 pl-9 text-gray-100 rounded-md text-body-sm outline-none transition-all duration-200 focus-within:border-blue-300 focus-within:ring-1 focus-within:ring-blue-300 placeholder:text-gray-300 placeholder:text-body-sm"
+        className="h-10 w-full rounded-md border border-gray-400 bg-transparent pl-9 text-body-sm text-gray-100 outline-none transition-all duration-200 placeholder:text-body-sm placeholder:text-gray-300 focus-within:border-blue-300 focus-within:ring-1 focus-within:ring-blue-300 md:w-60"
       />
       {query && (
         <CircleX
-          className="absolute text-gray-300 size-4 top-1/2 -translate-y-1/2 right-3 cursor-pointer"
+          className="absolute right-3 top-1/2 size-4 -translate-y-1/2 cursor-pointer text-gray-300"
           onClick={resetSearch}
         />
       )}
