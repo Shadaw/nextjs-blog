@@ -4,10 +4,6 @@ import { Inter, PT_Sans_Caption } from 'next/font/google'
 import { Footer } from './footer'
 import { Header } from './header'
 
-type LayoutProps = {
-  children: React.ReactNode
-}
-
 const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500'],
@@ -19,6 +15,10 @@ const ptSansCaption = PT_Sans_Caption({
   weight: '700',
   variable: '--font-sans',
 })
+
+type LayoutProps = {
+  children: React.ReactNode
+}
 
 export function Layout({ children }: LayoutProps) {
   return (
