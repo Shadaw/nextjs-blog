@@ -1,10 +1,10 @@
-import { 
+import {
   CallToAction,
   CustomerStorySection,
   FeatureSection,
   HeroSection,
-  SupportSection 
-} from "@/templates/landing-page/sections";
+  SupportSection,
+} from '@/templates/landing-page/sections'
 
 export function LandingPage() {
   return (

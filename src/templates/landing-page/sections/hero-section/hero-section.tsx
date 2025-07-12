@@ -1,8 +1,8 @@
-import { ArrowRight, Clock, Store } from "lucide-react";
 import Image from 'next/image'
-import Link from "next/link";
+import Link from 'next/link'
+import { ArrowRight, Clock, Store } from 'lucide-react'
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 
 export function HeroSection() {
   return (
@@ -12,7 +12,6 @@ export function HeroSection() {
           <h1 className="text-gray-100 text-heading-hg font-sans">
             Venda seus produtos como afiliado em um unico lugar
           </h1>
-
 
           <div className="flex flex-col items-center justify-center gap-4 md:items-start lg:items-start">
             <div>
@@ -39,7 +38,9 @@ export function HeroSection() {
                 </Link>
               </Button>
 
-              <p className="text-gray-300 text-body-xs">Não precisa de cartão de crédito</p>
+              <p className="text-gray-300 text-body-xs">
+                Não precisa de cartão de crédito
+              </p>
             </div>
           </div>
         </div>

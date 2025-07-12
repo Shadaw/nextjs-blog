@@ -1,5 +1,6 @@
-import Link from "next/link"
-import { Logo } from "@/components/logo"
+import Link from 'next/link'
+
+import { Logo } from '@/components/logo'
 
 export function Footer() {
   return (
@@ -9,9 +10,18 @@ export function Footer() {
           <Logo />
 
           <nav className="flex flex-col md:flex-row items-center gap-4 text-sm text-blue-100">
-            <Link href="/termos-de-uso" className="hover:text-blue-200">Termos de uso</Link>
-            <Link href="/politica-de-privacidade" className="hover:text-blue-200">Politica de privacidade</Link>
-            <Link href="/feedback" className="hover:text-blue-200">Feedback</Link>
+            <Link href="/termos-de-uso" className="hover:text-blue-200">
+              Termos de uso
+            </Link>
+            <Link
+              href="/politica-de-privacidade"
+              className="hover:text-blue-200"
+            >
+              Politica de privacidade
+            </Link>
+            <Link href="/feedback" className="hover:text-blue-200">
+              Feedback
+            </Link>
           </nav>
         </div>
       </div>

@@ -1,19 +1,20 @@
-import { PT_Sans_Caption } from "next/font/google"
+import { PT_Sans_Caption } from 'next/font/google'
 import Image from 'next/image'
 
 const ptSansCaption = PT_Sans_Caption({
   subsets: ['latin'],
-  weight: '700'
+  weight: '700',
 })
 
 const customerStorys = [
   {
-    content: 'Criar minha loja no site.set foi a melhor decisão para o meu negócio. A plataforma é super intuitiva, e consegui colocar meus produtos à venda em poucos minutos.',
+    content:
+      'Criar minha loja no site.set foi a melhor decisão para o meu negócio. A plataforma é super intuitiva, e consegui colocar meus produtos à venda em poucos minutos.',
     author: {
       name: 'Annette Bones',
       role: 'CEO na Anne Corp',
       avatar: '/customer-01.png',
-    }
+    },
   },
   {
     content:
@@ -23,18 +24,25 @@ const customerStorys = [
       role: 'CEO na JJ Corp',
       avatar: '/customer-02.png',
     },
-  }
+  },
 ]
 
 export function CustomerStorySection() {
   return (
     <section className="container py-8 md:py-10">
       <div className="flex flex-col items-center gap-12">
-        <h2 className={`${ptSansCaption.className} text-heading-xl text-gray-100`}>Quem utiliza, aprova!</h2>
+        <h2
+          className={`${ptSansCaption.className} text-heading-xl text-gray-100`}
+        >
+          Quem utiliza, aprova!
+        </h2>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {customerStorys.map((customerStory => (
-            <div className="flex flex-col gap-6 rounded-lg bg-gray-500 p-6 md:p-12" key={customerStory.author.name}>
+          {customerStorys.map((customerStory) => (
+            <div
+              className="flex flex-col gap-6 rounded-lg bg-gray-500 p-6 md:p-12"
+              key={customerStory.author.name}
+            >
               <p className="text-balance text-gray-200">
                 {customerStory.content}
               </p>
@@ -52,11 +60,13 @@ export function CustomerStorySection() {
                   <strong className="text-gray-200 text-sm">
                     {customerStory.author.name}
                   </strong>
-                  <span className="text-gray-300 text-xs">{customerStory.author.role}</span>
+                  <span className="text-gray-300 text-xs">
+                    {customerStory.author.role}
+                  </span>
                 </div>
               </div>
             </div>
-          )))}
+          ))}
         </div>
       </div>
     </section>
