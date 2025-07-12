@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import { allPosts } from 'contentlayer/generated'
 
 import { Search } from '@/components/search'
 
@@ -12,6 +13,10 @@ export function BlogList() {
   const pageTitle = query
     ? `Resultados de busca para "${query}"`
     : 'Dicas e estratégias para impulsionar seu negócio'
+
+  const posts = allPosts
+
+  console.log(posts)
 
   return (
     <div className="flex h-full flex-grow flex-col py-24">
@@ -31,17 +36,20 @@ export function BlogList() {
       </header>
 
       <PostGridCard>
-        <PostCard
-          slug="transformando-seu-negocio"
-          title="Transformando seu negocio em uma loja virtual"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quia!"
-          date="12/07/2025"
-          image="/assets/primeiro-post.png"
-          author={{
-            avatar: '/customer-01.png',
-            name: 'Gustavo Alexandre',
-          }}
-        />
+        {posts.map((post) => (
+          <PostCard
+            key={post._id}
+            slug={post.slug}
+            title={post.title}
+            description={post.description}
+            date={new Date(post.date).toLocaleDateString('pt-BR')}
+            image={post.image}
+            author={{
+              avatar: post.author.avatar,
+              name: post.author.name,
+            }}
+          />
+        ))}
       </PostGridCard>
     </div>
   )
