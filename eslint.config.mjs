@@ -18,6 +18,13 @@ const eslintConfig = [
   {
     rules: {
       'no-console': 'warn',
+      'react/self-closing-comp': [
+        'error',
+        {
+          component: true,
+          html: true,
+        },
+      ],
     },
   },
 ]
