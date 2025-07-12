@@ -29,7 +29,17 @@ export function BlogList() {
         </div>
       </header>
 
-      <PostCard />
+      <PostCard
+        slug="transformando-seu-negocio"
+        title="Transformando seu negocio em uma loja virtual"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quia!"
+        date="12/07/2025"
+        image="/assets/primeiro-post.png"
+        author={{
+          avatar: '/customer-01.png',
+          name: 'Gustavo Alexandre',
+        }}
+      />
     </div>
   )
 }
