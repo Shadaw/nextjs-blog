@@ -1,6 +1,8 @@
 import { PT_Sans_Caption } from 'next/font/google'
 import Image from 'next/image'
 
+import { Avatar } from '@/components/avatar'
+
 const ptSansCaption = PT_Sans_Caption({
   subsets: ['latin'],
   weight: '700',
@@ -46,7 +48,7 @@ export function CustomerStorySection() {
               <p className="text-balance text-gray-200">
                 {customerStory.content}
               </p>
-              <div className="flex items-center gap-3">
+              {/* <div className="flex items-center gap-3">
                 <div className="relative size-10 overflow-hidden rounded-full">
                   <Image
                     src={customerStory.author.avatar}
@@ -64,7 +66,20 @@ export function CustomerStorySection() {
                     {customerStory.author.role}
                   </span>
                 </div>
-              </div>
+              </div> */}
+              <Avatar.Container>
+                <Avatar.Image
+                  src={customerStory.author.avatar}
+                  alt={customerStory.author.name}
+                  size="sm"
+                />
+                <Avatar.Content>
+                  <Avatar.Title>{customerStory.author.name}</Avatar.Title>
+                  <Avatar.Description>
+                    {customerStory.author.role}
+                  </Avatar.Description>
+                </Avatar.Content>
+              </Avatar.Container>
             </div>
           ))}
         </div>
