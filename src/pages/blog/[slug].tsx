@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/breadcrumb'
 import { Button } from '@/components/ui/button'
 import { Avatar } from '@/components/avatar'
+import { useShare } from '@/components/hooks/use-share'
 import { Markdown } from '@/components/markdown'
 
 export default function PostPage() {
@@ -21,6 +22,13 @@ export default function PostPage() {
     (post) => post.slug.toLowerCase() === slug.toLowerCase(),
   )!
   const publishedDate = new Date(post.date).toLocaleDateString('pt-BR')
+  const postUrl = `https://site.set/blog/${slug}`
+
+  const { shareButtons } = useShare({
+    url: postUrl,
+    title: post.title,
+    text: post.description,
+  })
 
   return (
     <main className="mt-32 text-gray-100">
@@ -83,16 +91,15 @@ export default function PostPage() {
               </h2>
 
               <div className="space-y-3">
-                {[
-                  { key: '1', providerName: 'LinkedIn' },
-                  { key: '2', providerName: 'Facebook' },
-                ].map((provider) => (
+                {shareButtons.map((provider) => (
                   <Button
-                    key={provider.key}
+                    key={provider.provider}
                     variant="outline"
                     className="w-full justify-start gap-2"
+                    onClick={() => provider.action()}
                   >
-                    {provider.providerName}
+                    {provider.icon}
+                    {provider.name}
                   </Button>
                 ))}
               </div>
