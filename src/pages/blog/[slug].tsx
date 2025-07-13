@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useShare } from '@/hooks'
 import { allPosts } from 'contentlayer/generated'
 
 import {
@@ -12,7 +13,6 @@ import {
 } from '@/components/ui/breadcrumb'
 import { Button } from '@/components/ui/button'
 import { Avatar } from '@/components/avatar'
-import { useShare } from '@/components/hooks/use-share'
 import { Markdown } from '@/components/markdown'
 
 export default function PostPage() {
@@ -85,7 +85,7 @@ export default function PostPage() {
           </article>
 
           <aside className="space-y-6">
-            <div className="rounded-lg bg-gray-700 p-4 md:p-6">
+            <div className="rounded-lg bg-gray-700">
               <h2 className="mb-4 text-heading-xs text-gray-100">
                 Compartilhar
               </h2>
