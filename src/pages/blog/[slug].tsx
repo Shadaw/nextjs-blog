@@ -10,6 +10,7 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
+import { Button } from '@/components/ui/button'
 import { Avatar } from '@/components/avatar'
 import { Markdown } from '@/components/markdown'
 
@@ -19,7 +20,7 @@ export default function PostPage() {
   const post = allPosts.find(
     (post) => post.slug.toLowerCase() === slug.toLowerCase(),
   )!
-  const publishedDate = new Date(post?.date).toLocaleDateString('pt-BR')
+  const publishedDate = new Date(post.date).toLocaleDateString('pt-BR')
 
   return (
     <main className="mt-32 text-gray-100">
@@ -33,9 +34,7 @@ export default function PostPage() {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <span className="text-action-sm text-blue-200">
-                {post?.title}
-              </span>
+              <span className="text-action-sm text-blue-200">{post.title}</span>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -44,8 +43,8 @@ export default function PostPage() {
           <article className="overflow-hidden rounded-lg border-[1px] border-gray-400 bg-gray-600">
             <figure className="relative aspect-[16/10] w-full overflow-hidden rounded-lg">
               <Image
-                src={post?.image}
-                alt={post?.title}
+                src={post.image}
+                alt={post.title}
                 fill
                 className="object-cover"
               />
@@ -53,17 +52,17 @@ export default function PostPage() {
 
             <header className="mt-8 p-4 pb-0 md:mt-12 md:p-6 lg:p-12 lg:pb-6">
               <h1 className="mb-8 text-balance text-heading-lg md:text-heading-xl lg:text-heading-xl">
-                {post?.title}
+                {post.title}
               </h1>
 
               <Avatar.Container>
                 <Avatar.Image
-                  src={post?.author.avatar}
-                  alt={post?.author.name}
+                  src={post.author.avatar}
+                  alt={post.author.name}
                   size="sm"
                 />
                 <Avatar.Content>
-                  <Avatar.Title>{post?.author.name}</Avatar.Title>
+                  <Avatar.Title>{post.author.name}</Avatar.Title>
                   <Avatar.Description>
                     Publicado em{' '}
                     <time dateTime={post.date}>{publishedDate}</time>
@@ -76,6 +75,22 @@ export default function PostPage() {
               <Markdown content={post.body.raw} />
             </div>
           </article>
+
+          <aside className="space-y-6">
+            <div className="rounded-lg bg-gray-700 p-4 md:p-6">
+              <h2 className="mb-4 text-heading-xs text-gray-100">
+                Compartilhar
+              </h2>
+
+              <div className="space-y-3">
+                {[{ key: 1, providerName: 'LinkedIn' }].map((provider) => (
+                  <Button key={provider.key} variant="outline">
+                    {provider.providerName}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </main>

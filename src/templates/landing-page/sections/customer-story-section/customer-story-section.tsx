@@ -1,5 +1,4 @@
 import { PT_Sans_Caption } from 'next/font/google'
-import Image from 'next/image'
 
 import { Avatar } from '@/components/avatar'
 
